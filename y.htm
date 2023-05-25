@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="author" content="Макаренко Никита">
+      <meta name="keywords" content="Мастер и Маргарита, Булгаков, книга, литература">
+      <link rel="icon" href="http://rushist.com/touch-icon-ipad.png">
+      <title>Любимая страница книги</title>
+   </head>
+   <body>
+      <h1>Отрывок из "Мастер и Маргарита"</h1>
+      <div class="flex-wrap">
+         <div class="img-wrap">
+            <img src="https://ussr-akter.ru/images/Kadri-iz-filma/Master-i-margarita/Master-i-Margarita-5.jpg" alt="Иллюстрация к сцене книги" />
+         </div>
+         <p>
+            Безысходность нашла свое выражение в том, что, опустив руки, посмотрели все трое на часы.
+            <q cite="https://www.culture.ru/live/movies/1608/master-i-margarita">Это случилось в 1926 году, мне было двадцать лет, — рассказывала хозяйка</q>
+            И вот тут начал происходить, надо думать, самый крупный из отыгранных Воландом и его мрачной свитой номеров. Нижний ряд лиц, как это всегда бывает, зеркально повторял выражение лиц сцены. Бывало, и племянниц полков было огорошено.
+         </p>
+      </div>
+   </body>
+</html>
+
+<style>
+/* basic light colors */
+:root {
+  --body-bg: #f5f5f5;
+  --body-c: #333;
+  --title-c: #666;
+  --quote-c: #999;
+  --checkbox-brd: #343a3f;
+}
+
+* {
+  box-sizing: border-box;
+  transition: background-color .3s ease-in-out;
+}
+
+body {
+  font-family: Georgia, serif;
+  font-size: 1.1em;
+  line-height: 1.5;
+  color: var(--body-c);
+  background-color: var(--body-bg);
+  margin: 2em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: Arial, sans-serif;
+  color: var(--title-c);
+  margin: 1.5em 0;
+}
+
+p {
+  margin: 1em 0;
+  text-align: justify;
+  hyphens: auto;
+}
+
+q {
+  font-style: italic;
+  padding: 1em;
+  border-left: 4px solid var(--quote-c);
+  margin: 15px;
+  display: block;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: .3s ease-in-out;
+}
+
+.img-wrap {
+  max-width: 30vw;
+}
+
+.flex-wrap {
+  display: flex;
+  gap: 20px;
+}
+</style>
