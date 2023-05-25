@@ -8,6 +8,10 @@
       <title>Любимая страница книги</title>
    </head>
    <body>
+      <div class="checkbox-circle">
+         <input type="checkbox" id="darkThemeCheck" name="check">
+         <label for="darkThemeCheck">Темная тема</label>
+      </div>
       <h1>Отрывок из "Мастер и Маргарита"</h1>
       <div class="flex-wrap">
          <div class="img-wrap">
@@ -22,6 +26,13 @@
    </body>
 </html>
 
+<script>
+    let darkThemeBox = document.getElementById('darkThemeCheck')
+    darkThemeBox.addEventListener('change', (e)=>{
+        document.body.setAttribute('is-dark-theme', e.target.checked)
+    })
+</script>
+
 <style>
 /* basic light colors */
 :root {
@@ -30,6 +41,18 @@
   --title-c: #666;
   --quote-c: #999;
   --checkbox-brd: #343a3f;
+}
+
+[is-dark-theme="true"]{
+    --body-bg:#1b0d0d;
+    --body-c:#a5a5a5;
+    --title-c:#cfcfcf;
+    --quote-c:#999;
+    --checkbox-brd:#343a3f;
+}
+
+[is-dark-theme="true"] img{
+  filter: brightness(50%) sepia(50%) hue-rotate(-40deg);
 }
 
 * {
@@ -85,5 +108,64 @@ img {
 .flex-wrap {
   display: flex;
   gap: 20px;
+}
+
+/* checkbox */
+.checkbox-circle input[type="checkbox"] {
+  display: none;
+}
+
+.checkbox-circle label {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 20px;
+  color: var(--body-c);
+  font-style: italic;
+  transition: .1s ease-in-out;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+.checkbox-circle label:hover {
+  opacity: .8;
+  padding-left: 43px;
+
+}
+
+.checkbox-circle input[type="checkbox"]:hover + label:before {
+  border: 1px solid var(--checkbox-brd);
+  width: 1.2em;
+  height: 1.2em;
+  border: 2px solid #fff;
+  background: var(--body-c);
+  box-shadow: 0 0 0 1px #000;
+}
+
+.checkbox-circle input[type="checkbox"]:checked + label:before {
+  border-radius: 1em;
+  border: 2px solid #fff;
+  width: 1.2em;
+  height: 1.2em;
+  background: var(--body-c);
+  box-shadow: 0 0 0 1px #000;
+  -webkit-transform: rotateX(180deg);
+  transform: rotateX(180deg);
+}
+
+.checkbox-circle input[type="checkbox"] + label:before {
+  content: "";
+  display: block;
+  width: 1.4em;
+  height: 1.4em;
+  border: 1px solid var(--body-c);
+  border-radius: 1em;
+  position: absolute;
+  left: 0;
+  top: 0;
+  -webkit-transition: all .2s, transform .3s ease-in-out;
+  transition: background .5s, transform .3s ease-in-out;
 }
 </style>
